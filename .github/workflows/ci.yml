@@ -1,0 +1,22 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Build x86
+      run: msbuild src/gmpublish-ci.sln /t:Rebuild /p:configuration=Release /p:Platform=x86
+    - name: Copy distribution
+      run: copy dist build
+      shell: cmd
+    - uses: actions/upload-artifact@v1
+      with:
+        name: x86-artifact
+        path: build
