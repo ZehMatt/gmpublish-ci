@@ -1,0 +1,5 @@
+/build
+/src/.vs
+/src/gmpublish-ci/Release
+/src/gmpublish-ci/x64
+/src/gmpublish-ci/Debug

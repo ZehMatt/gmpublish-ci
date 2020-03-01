@@ -1,0 +1,5 @@
+LIBRARY Steamclient64
+EXPORTS
+	CreateInterface
+	Steam_BGetCallback
+	Steam_FreeLastCallback

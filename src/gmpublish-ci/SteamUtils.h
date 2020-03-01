@@ -1,0 +1,77 @@
+#pragma once
+
+class ISteamUtils
+{
+public:
+    virtual void GetInstallPath(void) = 0;
+    virtual void GetUserBaseFolderInstallImage(void) = 0;
+    virtual void GetManagedContentRoot(void) = 0;
+    virtual void GetSecondsSinceAppActive(void) = 0;
+    virtual void GetSecondsSinceComputerActive(void) = 0;
+    virtual void SetComputerActive(void) = 0;
+    virtual void GetConnectedUniverse(void) = 0;
+    virtual void GetServerRealTime(void) = 0;
+    virtual void GetIPCountry(void) = 0;
+    virtual void GetImageSize(int, unsigned int *, unsigned int *) = 0;
+    virtual void GetImageRGBA(int, unsigned char *, int) = 0;
+    virtual void GetCSERIPPort(unsigned int *, unsigned short *) = 0;
+    virtual void GetNumRunningApps(void) = 0;
+    virtual void GetCurrentBatteryPower(void) = 0;
+    virtual void SetOfflineMode(bool) = 0;
+    virtual void GetOfflineMode(void) = 0;
+    virtual void SetAppIDForCurrentPipe(unsigned int, bool) = 0;
+    virtual void GetAppID(void) = 0;
+    virtual void SetAPIDebuggingActive(bool, bool) = 0;
+    virtual void AllocPendingAPICallHandle(void) = 0;
+    virtual bool IsAPICallCompleted(unsigned long long, bool *) = 0;
+    virtual void GetAPICallFailureReason(unsigned long long) = 0;
+    virtual bool GetAPICallResult(unsigned long long, void *, int, int, bool *) = 0;
+    virtual void SetAPICallResultWithoutPostingCallback(unsigned long long, void const*, int, int) = 0;
+    virtual void SignalAppsToShutDown(void) = 0;
+    virtual void SignalServiceAppsToDisconnect(void) = 0;
+    virtual void TerminateAllAppsMultiStep(unsigned int) = 0;
+    virtual void GetCellID(void) = 0;
+    virtual void BIsGlobalInstance(void) = 0;
+    virtual void CheckFileSignature(char const*) = 0;
+    virtual void GetBuildID(void) = 0;
+    virtual void SetCurrentUIMode(int) = 0;
+    virtual void GetCurrentUIMode(void) = 0;
+    virtual void ShutdownLauncher(bool, bool) = 0;
+    virtual void SetLauncherType(int) = 0;
+    virtual void GetLauncherType(void) = 0;
+    virtual void ShowGamepadTextInput(int, int, char const*, unsigned int, char const*) = 0;
+    virtual void GetEnteredGamepadTextLength(void) = 0;
+    virtual void GetEnteredGamepadTextInput(char *, unsigned int) = 0;
+    virtual void GamepadTextInputClosed(int, bool, char const*) = 0;
+    virtual void SetSpew(int, int, int) = 0;
+    virtual void BDownloadsDisabled(void) = 0;
+    virtual void SetFocusedWindow(int, unsigned long long, bool) = 0;
+    virtual void GetSteamUILanguage(void) = 0;
+    virtual void CheckSteamReachable(void) = 0;
+    virtual void SetLastGameLaunchMethod(int) = 0;
+    virtual void SetVideoAdapterInfo(int, int, int, int, int, int, char const*) = 0;
+    virtual void SetControllerOverrideMode(int, char const*, unsigned int) = 0;
+    virtual void SetOverlayWindowFocusForPipe(bool, bool, int) = 0;
+    virtual void GetGameOverlayUIInstanceFocusGameID(bool *) = 0;
+    virtual void SetControllerConfigFileForAppID(unsigned int, char const*) = 0;
+    virtual void GetControllerConfigFileForAppID(unsigned int, char *, unsigned int) = 0;
+    virtual void IsSteamRunningInVR(void) = 0;
+    virtual void BIsRunningOnAlienwareAlpha(void) = 0;
+    virtual void StartVRDashboard(void) = 0;
+    virtual void IsVRHeadsetStreamingEnabled(unsigned int) = 0;
+    virtual void SetVRHeadsetStreamingEnabled(unsigned int, bool) = 0;
+    virtual void GenerateSupportSystemReport(void) = 0;
+    virtual void GetSupportSystemReport(char *, unsigned int, unsigned char *, unsigned int) = 0;
+    virtual void GetAppIdForPid(unsigned int, bool) = 0;
+    virtual void SetClientUIProcess(void) = 0;
+    virtual void BIsClientUIInForeground(void) = 0;
+    virtual void SetOverlayChatBrowserInfo(unsigned int, int) = 0;
+    virtual void ClearOverlayChatBrowserInfo(unsigned int) = 0;
+    virtual void GetOverlayChatBrowserInfo(void *, unsigned int, unsigned int *) = 0;
+    virtual void DispatchClientUINotification(int, char const*, unsigned int) = 0;
+    virtual void RespondToClientUINotification(unsigned int, bool, unsigned int) = 0;
+    virtual void DispatchClientUICommand(char const*, unsigned int) = 0;
+    virtual void DispatchComputerActiveStateChange(void) = 0;
+    virtual void DispatchOpenURLInClient(char const*, unsigned int, bool) = 0;
+};
+
